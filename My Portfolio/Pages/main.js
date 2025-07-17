@@ -16,7 +16,7 @@ function init() {
 
         setTimeout(() => {
             window.location.href = href;
-        }, 600); 
+        }, 700); 
     });
 });
 }
