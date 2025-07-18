@@ -163,7 +163,7 @@
         .footer { 
             padding: 50px;
             position: relative;
-            margin-top: -150px;
+            top: 0;
             text-align: center;
             font-weight: 600;
         }
@@ -205,14 +205,13 @@
             color: #ffffff;
             background-color: #000;
         }
-
         
         .parent {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             grid-template-rows: repeat(5, 1fr);
-            gap: 15px;
-            margin: 50px;
+            margin: 70px;
+            margin-top: 220px;
         }
             
         .div1 {
@@ -220,12 +219,9 @@
             grid-row: span 2 / span 2;
             transition: transform 0.4s ease;
         }
-        .div1:hover{ 
-            transform: scale(0.9);
-        }
+       
         .div1-img {
             max-width: 100%;
-            border-radius: 15px;
             box-shadow: 0px 5px 17px 0px #00000061;
         }
 
@@ -235,12 +231,8 @@
             grid-column-start: 3;
             transition: transform 0.4s ease;
         }
-        .div2:hover {
-            transform: scale(0.9);
-        }
         .div2-img{
             max-width: 100%;
-            border-radius: 15px;
             box-shadow: 0px 5px 17px 0px #00000061;
         }
 
@@ -251,7 +243,7 @@
         }
         .div3-img {
             max-width: 100%;
-             border-radius: 15px;
+             border-radius: 5px;
             box-shadow: 0px 5px 17px 0px #00000061;
         }
 
@@ -263,12 +255,79 @@
         }
         .div4-img {
             max-width: 100%;
-             border-radius: 15px;
+            border-radius: 5px;
             box-shadow: 0px 5px 17px 0px #00000061;
         }
+
+        .hover-wrapper {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hover-wrapper img {
+            display: block;
+            width: 100%;
+            transition: transform 0.4s ease;
+        }
+
+        .hover-wrapper:hover img {
+            transform: scale(1.05);
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #212020f2;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            mix-blend-mode: multiply;
+        }
+
+        .hover-wrapper:hover .overlay {
+            opacity: 0.7;
+        }
+
+        .overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 50px;
+            font-weight: 700;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .hover-wrapper:hover .overlay-text {
+            opacity: 1;
+        }
         
-        
-        @media (max-width: 768px) {
+        @media (max-width: 850px) {
+            .hover-wrapper:hover img,
+            .hover-wrapper:hover .overlay,
+            .hover-wrapper:hover .overlay-text {
+                transform: none;
+                opacity: 0;
+    }
+
+            .parent {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: auto;
+                margin: 40px;
+                margin-top: 150px;
+                gap: 12px;
+            }
+
+            .div1, .div2, .div3, .div4 {
+                grid-column: span 2;
+                grid-row: auto;
+            }
+
             .header {
                 padding: 24px 24px;
                 flex-direction: column;
@@ -298,6 +357,25 @@
         }
 
         @media (max-width: 480px) {
+            .hover-wrapper:hover img,
+            .hover-wrapper:hover .overlay,
+            .hover-wrapper:hover .overlay-text {
+                transform: none;
+                opacity: 0;
+    }
+
+            .parent {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                margin: 20px;
+                margin-top: 100px;
+                gap: 10px;
+            }
+
+            .div1,  .div2, .div3, .div4 {
+                grid-column: span 1;
+                grid-row: auto;
+            }
             .nav-links {
                 gap: 16px;
             }
@@ -311,6 +389,6 @@
             }
             
             .footerSocial {
-                margin-top: 200px;
+                margin-top: 250px;
             }
         }
