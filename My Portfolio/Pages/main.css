@@ -207,6 +207,67 @@
         }
 
         
+        .parent {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            gap: 15px;
+            margin: 50px;
+        }
+            
+        .div1 {
+            grid-column: span 2 / span 2;
+            grid-row: span 2 / span 2;
+            transition: transform 0.4s ease;
+        }
+        .div1:hover{ 
+            transform: scale(0.9);
+        }
+        .div1-img {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0px 5px 17px 0px #00000061;
+        }
+
+        .div2 {
+            grid-column: span 2 / span 2;
+            grid-row: span 4 / span 4;
+            grid-column-start: 3;
+            transition: transform 0.4s ease;
+        }
+        .div2:hover {
+            transform: scale(0.9);
+        }
+        .div2-img{
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0px 5px 17px 0px #00000061;
+        }
+
+        .div3 {
+            grid-column: span 2 / span 2;
+            grid-column-start: 3;
+            grid-row-start: 5;
+        }
+        .div3-img {
+            max-width: 100%;
+             border-radius: 15px;
+            box-shadow: 0px 5px 17px 0px #00000061;
+        }
+
+        .div4 {
+            grid-column: span 2 / span 2;
+            grid-row: span 3 / span 3;
+            grid-column-start: 1;
+            grid-row-start: 3;
+        }
+        .div4-img {
+            max-width: 100%;
+             border-radius: 15px;
+            box-shadow: 0px 5px 17px 0px #00000061;
+        }
+        
+        
         @media (max-width: 768px) {
             .header {
                 padding: 24px 24px;
