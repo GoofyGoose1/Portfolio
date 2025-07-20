@@ -209,7 +209,7 @@
         .parent {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 693px);
             margin: 70px;
             margin-top: 215px;
         }
@@ -336,7 +336,6 @@
                 grid-template-rows: auto;
                 margin: 40px;
                 margin-top: 150px;
-                gap: 12px;
             }
 
             .div1, .div2, .div3, .div4 {
@@ -383,13 +382,10 @@
             .parent {
                 grid-template-columns: 1fr;
                 grid-template-rows: auto;
-                margin: 20px;
-                margin-top: 100px;
-                gap: 10px;
             }
 
             .div1,  .div2, .div3, .div4 {
-                grid-column: span 1;
+                grid-column: span 2;
                 grid-row: auto;
             }
             .nav-links {
