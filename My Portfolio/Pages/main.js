@@ -100,7 +100,3 @@ document.addEventListener('DOMContentLoaded', () => {
     init();
     loadGitHubProjects();
 });
-
-
-
-const GITHUB_TOKEN = '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';
