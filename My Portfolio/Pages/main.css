@@ -249,7 +249,11 @@
             max-width: 100%;
             width: 2200px;
             height: 100%;
+            padding: 10px;
+            border-radius: 50px;
             object-fit: cover;
+            object-position: center 0;
+            
        }
 
        .div4 {
