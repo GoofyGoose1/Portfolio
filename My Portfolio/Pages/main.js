@@ -48,8 +48,13 @@ function init() {
 async function loadGitHubProjects() {
     const container = document.getElementById('projects-container');
     const githubSection = document.getElementById('github-projects');
-    const username = 'GoofyGoose1';
 
+     if (!container || !githubSection) {
+        console.warn('GitHub projects section or container not found.');
+        return;
+    }
+
+    const username = 'GoofyGoose1';
     const singleRepo = githubSection.dataset.repo;
     const multipleRepos = githubSection.dataset.repos;
 
