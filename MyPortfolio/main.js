@@ -100,5 +100,6 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('pageshow', (event) => {
     if (event.persisted) {
         init();
+        console.log('pageshow fired')
     }
 });
