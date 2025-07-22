@@ -105,3 +105,9 @@ document.addEventListener('DOMContentLoaded', () => {
     init();
     loadGitHubProjects();
 });
+
+window.addEventListener('pageshow', (event) => {
+    if (event.parsisted) {
+        init();
+    }
+});
