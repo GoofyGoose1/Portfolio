@@ -380,8 +380,9 @@
             padding: 30px;
             justify-content: space-around;
             flex: 1;
+            flex-wrap: 1;
         }
-
+        
         .project-column h3 {
             font-size: 20px;
             font-weight: 600;
@@ -466,7 +467,7 @@
             .parent {
                 grid-template-columns: repeat(2, 1fr);
                 grid-template-rows: auto;
-                margin: 40px;
+                margin: 10px;
                 margin-top: 150px;
             }
 
@@ -474,7 +475,11 @@
                 grid-column: span 2;
                 grid-row: auto;
             }
-
+            .div1-image, .div2-image, .div3-gaming, .div4-image, .div5-image {
+                border-radius: 25px;
+                padding: 5px;
+            }
+           
             .header {
                 padding: 24px 24px;
                 flex-direction: column;
@@ -504,6 +509,13 @@
                 margin-top: 80px;
             }
 
+           .project-info {
+                flex-direction: column; /* Stack items vertically */
+                align-items: center;    /* Center align items */
+                gap: 10px;    
+                text-align: center;          /* Reduce gap */
+                padding: 20px;          /* Adjust padding */
+            }
         }
 
         @media (max-width: 480px) {
@@ -512,7 +524,7 @@
             .hover-wrapper:hover .overlay-text {
                 transform: none;
                 opacity: 0;
-    }
+            }
 
             .parent {
                 grid-template-columns: 1fr;
