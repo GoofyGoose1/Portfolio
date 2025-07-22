@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 window.addEventListener('pageshow', (event) => {
-    if (event.parsisted) {
+    if (event.persisted) {
         init();
     }
 });
