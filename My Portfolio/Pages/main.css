@@ -220,7 +220,7 @@
         .parent {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(4, 693px);
+            grid-template-rows: repeat(3, 693px);
             margin: 70px;
             margin-top: 374px;
         }
@@ -358,6 +358,18 @@
         .project-img img {
             width: 100%;
             border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+        .project-img2 {
+            display: flex;
+            gap: 10px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+        .project-img2 img {
+            border-radius: 12px;
+            max-width: 100%;
+            width: 32.5%;
             box-shadow: 0 6px 20px rgba(0,0,0,0.1);
         }
 
