@@ -3,46 +3,37 @@ function init() {
     const parent = document.querySelector('.parent');
     const project = document.querySelector('.project-section');
 
-    if (main) {
-        main.classList.add('fade-in');
+    function triggerFadeIn(element) {
+        if (!element) return;
+        element.classList.remove('fade-in');
+        void element.offsetWidth;
+        element.classList.add('fade-in');
     }
-    if (parent) {
-        parent.classList.add('fade-in');
-    }
-    if(project) {
-        project.classList.add('fade-in');
-    }
-    
+
+    triggerFadeIn(main);
+    triggerFadeIn(parent);
+    triggerFadeIn(project);
+
     const links = document.querySelectorAll('a[href]');
-
     links.forEach(link => {
-    link.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        if (!href || href.startsWith('#') || href.startsWith('mailto:')){
-            return;
-        }
-        e.preventDefault();
+        link.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (!href || href.startsWith('#') || href.startsWith('mailto:')) {
+                return;
+            }
+            e.preventDefault();
 
-        if (main) {
-        main.classList.remove('fade-in');
-        main.classList.add('fade-out');
-        }
-        
-        if (parent) {
-        parent.classList.remove('fade-in');
-        parent.classList.add('fade-out');
-        }
+            [main, parent, project].forEach(el => {
+                if (!el) return;
+                el.classList.remove('fade-in');
+                el.classList.add('fade-out');
+            });
 
-        if (project) {
-        project.classList.remove('fade-in');
-        project.classList.add('fade-out');
-;        }
-
-        setTimeout(() => {
-            window.location.href = href;
-        }, 700); 
+            setTimeout(() => {
+                window.location.href = href;
+            }, 700);
+        });
     });
-});
 }
 
 async function loadGitHubProjects() {
