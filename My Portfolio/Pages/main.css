@@ -407,6 +407,9 @@
             font-weight: 700;
             margin-bottom: 20px;
         }
+        .problem-space ul {
+            padding: 5px;
+        }
 
         .custom-line {
             border: none;        
