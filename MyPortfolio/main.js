@@ -3,26 +3,24 @@ function init() {
     const parent = document.querySelector('.parent');
     const project = document.querySelector('.project-section');
 
-    function triggerFadeIn(element) {
-        if (!element) return;
-        element.classList.remove('fade-in');
-        void element.offsetWidth;
-        element.classList.add('fade-in');
+    function fadeInElement(el) {
+        if (!el) return;
+        el.style.opacity = '1';
+        el.classList.remove('fade-out');
+        el.classList.add('fade-in');
     }
 
-    triggerFadeIn(main);
-    triggerFadeIn(parent);
-    triggerFadeIn(project);
+    fadeInElement(main);
+    fadeInElement(parent);
+    fadeInElement(project);
 
     const links = document.querySelectorAll('a[href]');
     links.forEach(link => {
         link.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
-            if (!href || href.startsWith('#') || href.startsWith('mailto:')) {
-                return;
-            }
-            e.preventDefault();
+            if (!href || href.startsWith('#') || href.startsWith('mailto:')) return;
 
+            e.preventDefault();
             [main, parent, project].forEach(el => {
                 if (!el) return;
                 el.classList.remove('fade-in');
@@ -51,7 +49,6 @@ async function loadGitHubProjects() {
 
     async function renderRepo(repoName) {
         try {
-            
             const response = await fetch(`https://api.github.com/repos/${username}/${repoName}`);
             if (!response.ok) throw new Error(`Failed to load ${repoName}`);
             const repo = await response.json();
@@ -97,9 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loadGitHubProjects();
 });
 
-window.addEventListener('pageshow', (event) => {
-    if (event.persisted) {
-        init();
-        console.log('pageshow fired')
-    }
+window.addEventListener('pageshow', () => {
+    console.log('pageshow fired');
+    init();
 });
