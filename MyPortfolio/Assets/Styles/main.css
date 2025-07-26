@@ -468,7 +468,7 @@
                 grid-column: span 2;
                 grid-row: auto;
             }
-            .div1-image, .div2-image, .div3-gaming, .div4-image, .div5-image {
+            .div1-image, .div2-image, .div3-image, .div4-image, .div5-image {
                 border-radius: 25px;
                 padding: 5px;
             }
