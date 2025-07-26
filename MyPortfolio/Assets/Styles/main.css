@@ -262,7 +262,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center 0;
+            object-position: center;
        }
   
        .div4 {
@@ -358,12 +358,24 @@
             display: flex;
             gap: 10px;
             border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
         }
         .project-img2 img {
             border-radius: 12px;
             max-width: 100%;
             width: 32.5%;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+
+        .project-img3 {
+            display: flex;
+            gap: 10px;
+            border-radius: 10px;
+        }
+        .project-img3 img {
+            border-radius: 12px;
+            max-width: 100%;
+            max-height: 100%;
+            width: 50%;
             box-shadow: 0 6px 20px rgba(0,0,0,0.1);
         }
 
