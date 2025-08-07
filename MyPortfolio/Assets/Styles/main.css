@@ -535,6 +535,7 @@
                 text-align: center;         
                 padding: 20px;          
             
+            }
         }
 
         @media (max-width: 480px) {
@@ -543,6 +544,12 @@
             .hover-wrapper:hover .overlay-text {
                 transform: none;
                 opacity: 0;
+            }
+
+            .main-content {
+                margin: 0;
+                padding: 0;
+               
             }
 
             .parent {
@@ -563,7 +570,8 @@
             }
 
             .intro-text {
-                font-size: 28px;
+                font-size: 20px;
+                padding: 0;
             }
             spanT {
                 font-size: 40px;
@@ -572,6 +580,10 @@
             .footerSocial {
                 margin-top: 250px;
             }
+
+            ul {
+                font-size: 15px;
+            }
         }
-    }
+    
 
