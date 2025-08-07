@@ -7,12 +7,13 @@ function init() {
         if (!el) return;
         el.style.opacity = '1';
         el.classList.remove('fade-out');
-        el.classList.add('fade-in');
+        el.classList.remove('fade-in');
+        el.classList.add('roll-in');
     }
 
-    fadeInElement(main);
+    fadeInElement(main, true);
     fadeInElement(parent);
-    fadeInElement(project);
+    fadeInElement(project, true);
 
     const links = document.querySelectorAll('a[href]');
     links.forEach(link => {
@@ -98,3 +99,4 @@ window.addEventListener('pageshow', () => {
     console.log('pageshow fired');
     init();
 });
+

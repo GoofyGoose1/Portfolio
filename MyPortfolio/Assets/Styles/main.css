@@ -15,6 +15,21 @@
         opacity: 0;
     }
 }
+@keyframes rollInAnimation {
+    0% {
+        opacity: 0;
+        transform: translateX(0) rotateX(-50deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) rotateX(0deg);
+    }
+}
+
+        .roll-in {
+            animation: rollInAnimation 0.8s ease-out forwards;
+            transform-origin: bottom center;
+        }
         
         * {
             margin: 0;
@@ -30,7 +45,6 @@
             color: #2988be;
             font-size: 66px;
             font-weight: 500;
-
         }
 
         body {
@@ -560,3 +574,4 @@
             }
         }
     }
+
