@@ -483,6 +483,7 @@
                 linear-gradient(#fff 0 0);
             mask-composite: exclude;
 
+            pointer-events: none;
             opacity: 0;
             transition: opacity .3s ease;
         }
@@ -512,9 +513,12 @@
 
             
         .project-card a {
+            z-index: 1;
+            position: relative;
             background: linear-gradient(145deg, rgb(0, 85, 255), rgb(11, 63, 80), rgb(0, 174, 255));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            color: transparent;
             background-clip: text;
 
             text-decoration: none;
