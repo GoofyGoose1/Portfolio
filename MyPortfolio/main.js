@@ -56,14 +56,45 @@ async function loadGitHubProjects() {
 
             const languagesRes = await fetch(repo.languages_url);
             const languages = await languagesRes.json();
-            const languagesList = Object.keys(languages).join(', ') || 'No specified languages';
+            
+            const entries = Object.entries(languages).sort((a,b) => b[1]-a[1]);
+            const total = entries.reduce((s,[,v]) => s+v, 0);
+
+              const COLORS = {
+                "JavaScript":"#f1e05a", CSS:"#563d7c", HTML:"#e34c26",
+                TypeScript:"#3178c6", Python:"#3572A5", Java:"#b07219",
+                "C#":"#178600", "C++":"#f34b7d", C:"#555555",
+                Go:"#00ADD8", PHP:"#4F5D95", Ruby:"#701516",
+                Rust:"#dea584", Kotlin:"#A97BFF", Swift:"#F05138"
+            };
+
+            const bars = entries.map(([name, bytes]) => {
+            const pct = total ? (bytes/total*100) : 0;
+            const color = COLORS[name] || "rgba(0,0,0,.15)";
+                return `<span class="lang-seg" style="width:${pct.toFixed(2)}%;background:${color}" title="${name} ${pct.toFixed(1)}%"></span>`;
+        }).join("");
+
+            const legendItems = entries.map(([name, bytes]) => {
+            const pct = total ? (bytes/total*100) : 0;
+            const color = COLORS[name] || "rgba(0,0,0,.15)";
+                return `<li><span class="lang-dot" style="background:${color}"></span>${name} ${pct.toFixed(1)}%</li>`;
+        });
+            const legend = `<ul class="lang-legend">${legendItems.join("")}</ul>`;
 
             const card = document.createElement('div');
             card.classList.add('project-card');
             card.innerHTML = `
                 <h3>${repo.name}</h3>
                 <p>${repo.description || 'No description'}</p>
-                <p><strong>Languages:</strong> ${languagesList}</p>
+                
+                 <div class="lang">
+                    <span class="lang-label">Languages</span>
+                    <div class="lang-bar">
+                        ${bars || `<span class="lang-seg" style="width:100%;background:rgba(0,0,0,.1)" title="No languages detected"></span>`}
+                    </div>
+                    ${entries.length ? legend : ""} 
+                </div>
+
                 <a href="${repo.html_url}" target="_blank">GitHub</a>
             `;
             container.appendChild(card);
