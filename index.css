@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap");
+@import "tailwindcss";
+
+:root {
+  --bg: #1e1e1e;
+  --sidebar: #252526;
+  --activity: #333333;
+  --border: #3c3c3c;
+  --text: #d4d4d4;
+  --muted: #858585;
+  --blue: #569cd6;
+  --cyan: #4ec9b0;
+  --orange: #ce9178;
+  --yellow: #dcdcaa;
+  --green: #6a9955;
+  --statusbar: #007acc;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: "JetBrains Mono", monospace;
+  background: var(--bg);
+  color: var(--text);
+  cursor: none;
+}
+
+button, a, input, textarea { font-family: inherit; }
+button, [role="button"], a { cursor: none; }
+
+.cursor-dot {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: var(--cyan);
+  border-radius: 999px;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: screen;
+}
+
+.cursor-ring {
+  position: fixed;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgb(78 201 176 / .55);
+  border-radius: 999px;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width .18s ease, height .18s ease, border-color .18s ease;
+}
+
+body:has(button:hover) .cursor-ring,
+body:has(a:hover) .cursor-ring,
+body:has([role="button"]:hover) .cursor-ring {
+  width: 48px;
+  height: 48px;
+  border-color: rgb(78 201 176 / .85);
+}
+
+.boot-line { opacity: 0; animation: fade-in .3s ease forwards; }
+.reveal { opacity: 0; transform: translateY(10px); animation: reveal .45s ease forwards; }
+.blink { display: inline-block; width: 2px; height: 15px; background: #aeafad; animation: blink 1s step-end infinite; vertical-align: text-bottom; }
+@keyframes fade-in { to { opacity: 1; } }
+@keyframes reveal { to { opacity: 1; transform: translateY(0); } }
+@keyframes blink { 50% { opacity: 0; } }
+@keyframes pulse {
+  0%,100% { box-shadow: 0 0 0 0 rgb(40 201 64 / .5); }
+  50% { box-shadow: 0 0 0 6px rgb(40 201 64 / 0); }
+}
+
+.code-scroll::-webkit-scrollbar,
+.sidebar-scroll::-webkit-scrollbar { width: 8px; height: 8px; }
+.code-scroll::-webkit-scrollbar-thumb,
+.sidebar-scroll::-webkit-scrollbar-thumb { background: #424242; border-radius: 999px; }
