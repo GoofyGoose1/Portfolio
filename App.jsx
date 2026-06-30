@@ -488,7 +488,7 @@ function Contact({ notify, markModified }) {
     ["Email", "edridaniel2002@gmail.com", "mailto:edridaniel2002@gmail.com", <Mail size={18} className="text-[#4ec9b0]" />],
     ["LinkedIn", "linkedin.com/in/danieledri-", "https://www.linkedin.com/in/danieledri-", <FaLinkedin className="text-blue-500" />],
     ["GitHub", "github.com/GoofyGoose1", "https://github.com/GoofyGoose1", <FaGithub />],
-    ["Instagram", "instagram.com/imdanny.xo", "https://www.instagram.com/imdanny.xo", <FaInstagram className="text-pink-500" />],
+    ["Instagram", "instagram.com/imdanny.ui", "https://www.instagram.com/imdanny.ui", <FaInstagram className="text-pink-500" />],
     ["Facebook", "facebook.com/daniel.edri.182", "https://www.facebook.com/daniel.edri.182", <FaFacebookF className="text-blue-500" />],
   ];
 
@@ -572,7 +572,7 @@ function SocialRow() {
   const links = [
     ["GitHub", "https://github.com/GoofyGoose1", <FaGithub />],
     ["LinkedIn", "https://www.linkedin.com/in/danieledri-", <FaLinkedin className="text-blue-500" />],
-    ["Instagram", "https://www.instagram.com/imdanny.xo", <FaInstagram className="text-pink-500" />],
+    ["Instagram", "https://www.instagram.com/imdanny.ui", <FaInstagram className="text-pink-500" />],
     ["Email", "mailto:edridaniel2002@gmail.com", <Mail size={15} className="text-[#4ec9b0]" />],
   ];
   return <div className="mt-8 flex flex-wrap gap-3">{links.map(([label, href, icon]) => <a key={label} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noreferrer" className="flex items-center gap-2 rounded border border-[#3c3c3c] px-4 py-2 font-mono text-sm text-zinc-500 hover:text-white">{icon}{label}</a>)}</div>;
