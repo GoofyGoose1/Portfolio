@@ -488,7 +488,7 @@ function Contact({ notify, markModified }) {
     ["Email", "edridaniel2002@gmail.com", "mailto:edridaniel2002@gmail.com", <Mail size={18} className="text-[#4ec9b0]" />],
     ["LinkedIn", "linkedin.com/in/danieledri-", "https://www.linkedin.com/in/danieledri-", <FaLinkedin className="text-blue-500" />],
     ["GitHub", "github.com/GoofyGoose1", "https://github.com/GoofyGoose1", <FaGithub />],
-    ["Instagram", "instagram.com/edridaniell", "https://www.instagram.com/imdanny.ui", <FaInstagram className="text-pink-500" />],
+    ["Instagram", "instagram.com/daniellledri", "https://www.instagram.com/imdanny.ui", <FaInstagram className="text-pink-500" />],
     ["Facebook", "facebook.com/daniel.edri.182", "https://www.facebook.com/daniel.edri.182", <FaFacebookF className="text-blue-500" />],
   ];
 
